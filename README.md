@@ -2,6 +2,10 @@
 
 A dApp boilerplate for Solana with the latest React dev environment.
 
+[![Epics dApp boilerplate demo](https://storage.googleapis.com/souls-bucket/epics/localhostdemo.png)](https://dapp-boilerplate.epics.dev/)
+
+[Demo (https://dapp-boilerplate.epics.dev/)](https://dapp-boilerplate.epics.dev/)
+
 ## Aiming to
 
 - Faster development
