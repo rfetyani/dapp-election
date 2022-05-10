@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "elsoul-nl"
+  },
+  "targets": {
+    "elsoul-nl": {
+      "hosting": {
+        "epics-dapp-boilerplate": [
+          "epics-dapp-boilerplate"
+        ]
+      }
+    }
+  }
+}
