@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "epics-dapp-boilerplate",
+    "target": "dapp-boilerplate",
     "public": "dist",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }
