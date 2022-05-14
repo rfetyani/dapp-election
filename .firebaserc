@@ -1,12 +1,12 @@
 {
   "projects": {
-    "default": "elsoul-nl"
+    "default": "epics-dao"
   },
   "targets": {
-    "elsoul-nl": {
+    "epics-dao": {
       "hosting": {
-        "epics-dapp-boilerplate": [
-          "epics-dapp-boilerplate"
+        "dapp-boilerplate": [
+          "dapp-boilerplate"
         ]
       }
     }
