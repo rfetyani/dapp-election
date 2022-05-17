@@ -36,7 +36,7 @@ Set a static version for each packages to reduce fails to run.
 ```bash
 # Node version (using nodenv)
 $ node -v
-v16.14.2
+v16.15.0
 
 # Install dependencies
 $ yarn install --frozen-lockfile
