@@ -34,6 +34,42 @@ export const EpicsGreen = {
   contrastText: '#FFFFFF',
 }
 
+export const EpicsPurple = {
+  100: '#B977AE',
+  200: '#A767A2',
+  300: '#8D4687',
+  400: '#763374',
+  500: '#642B60',
+  contrastText: '#FFFFFF',
+}
+
+export const EpicsPink = {
+  100: '#EDBEDC',
+  200: '#DE9BC4',
+  300: '#D687BA',
+  400: '#CE6BA4',
+  500: '#C0428A',
+  contrastText: '#FFFFFF',
+}
+
+export const EpicsOrange = {
+  100: '#FAAB7E',
+  200: '#F88F58',
+  300: '#F96815',
+  400: '#F45720',
+  500: '#E95C20',
+  contrastText: '#FFFFFF',
+}
+
+export const EpicsBrown = {
+  100: '#704822',
+  200: '#864C24',
+  300: '#94562A',
+  400: '#B55A30',
+  500: '#C86733',
+  contrastText: '#FFFFFF',
+}
+
 export const EpicsIndigo = {
   100: '#5B7EBD',
   200: '#4A5FA5',
