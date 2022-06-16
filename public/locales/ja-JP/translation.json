@@ -14,6 +14,7 @@
   "airdropSuccess": "1 SOL 獲得しました 💰",
   "sendTokenSuccess": "送金成功しました 🎉",
   "sendTokenError": "送金に失敗しました",
+  "sendTokenRejected": "送金がキャンセルされました",
   "tooLongMessage": "入力が長すぎます。{{length}}文字までにしてください",
   "requiredMessage": "入力必須項目です",
   "pleaseCheckValue": "入力内容を確認してください",

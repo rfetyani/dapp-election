@@ -32,6 +32,11 @@ export async function sendToken(
     await signAndSendTransaction(connection, signTransaction, transaction)
   } catch (error) {
     console.error('sendToken failed: ', error)
+    if (error instanceof Error) {
+      if (error.message.includes('User rejected the request')) {
+        throw Error('UserRejected')
+      }
+    }
   }
 }
 

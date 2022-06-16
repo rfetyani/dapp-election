@@ -14,6 +14,7 @@
   "airdropSuccess": "You've got 1 SOL 💰",
   "sendTokenSuccess": "Transaction succeeded 🎉",
   "sendTokenError": "Failed to transfer",
+  "sendTokenRejected": "Transaction rejected",
   "tooLongMessage": "Should be at most {{length}} characters long",
   "requiredMessage": "Required",
   "pleaseCheckValue": "Please check if it's correct data format",

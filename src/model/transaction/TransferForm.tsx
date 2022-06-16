@@ -117,8 +117,18 @@ export default function TransferForm({
         await new Promise((resolve) => setTimeout(resolve, 2000))
         await getBalance()
         enqueueSnackbar(`${t('sendTokenSuccess')}`, { variant: 'success' })
-      } catch {
-        enqueueSnackbar(`${t('sendTokenError')}`, { variant: 'error' })
+      } catch (error) {
+        if (error instanceof Error) {
+          if (error.message.includes('UserRejected')) {
+            enqueueSnackbar(`${t('sendTokenRejected')}`, {
+              variant: 'info',
+            })
+          } else {
+            enqueueSnackbar(`${t('sendTokenError')}`, {
+              variant: 'error',
+            })
+          }
+        }
       } finally {
         await fetchTransactions()
         setLoading(false)
