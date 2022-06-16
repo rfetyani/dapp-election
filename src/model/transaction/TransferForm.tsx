@@ -74,7 +74,7 @@ export default function TransferForm({
     } finally {
       setBalanceLoading(false)
     }
-  }, [setBalance])
+  }, [setBalance, connection, enqueueSnackbar, publicKey, t])
 
   const handleRequestAirdrop = useCallback(async () => {
     setAirdropLoading(true)
@@ -88,7 +88,7 @@ export default function TransferForm({
       enqueueSnackbar(`${t('airdropSuccess')}`, { variant: 'success' })
       setAirdropLoading(false)
     }
-  }, [enqueueSnackbar, setAirdropLoading])
+  }, [enqueueSnackbar, setAirdropLoading, connection, getBalance, publicKey, t])
 
   const {
     control,
@@ -124,7 +124,15 @@ export default function TransferForm({
         setLoading(false)
       }
     },
-    [t]
+    [
+      t,
+      connection,
+      enqueueSnackbar,
+      fetchTransactions,
+      getBalance,
+      publicKey,
+      signTransaction,
+    ]
   )
 
   const toAddressErrorHelperText = useCallback(
@@ -151,7 +159,7 @@ export default function TransferForm({
 
   useEffect(() => {
     getBalance()
-  }, [])
+  }, [getBalance])
 
   return (
     <>
