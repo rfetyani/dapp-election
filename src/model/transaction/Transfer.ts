@@ -4,7 +4,7 @@ import {
   PublicKey,
   SystemProgram,
   Transaction,
-  TransactionCtorFields,
+  TransactionBlockhashCtor,
   TransactionInstruction,
 } from '@solana/web3.js'
 
@@ -41,9 +41,10 @@ async function generateTransaction(
   instruction: TransactionInstruction
 ): Promise<Transaction> {
   const recentBlockhash = await connection.getLatestBlockhash()
-  const options: TransactionCtorFields = {
+  const options: TransactionBlockhashCtor = {
     feePayer,
-    recentBlockhash: recentBlockhash.blockhash,
+    blockhash: recentBlockhash.blockhash,
+    lastValidBlockHeight: recentBlockhash.lastValidBlockHeight,
   }
   const transaction = new Transaction(options)
   transaction.add(instruction)

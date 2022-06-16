@@ -51,7 +51,7 @@ export default function SolanaWalletProvider({ children }: Props) {
   return (
     <>
       <ConnectionProvider endpoint={endpoint}>
-        <WalletProvider wallets={wallets} onError={onError} autoConnect>
+        <WalletProvider wallets={wallets} onError={onError}>
           <WalletModalProvider>{children}</WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>

@@ -1,4 +1,4 @@
-import { Suspense, lazy, useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import {
   Container,
   Box,
@@ -27,10 +27,8 @@ import { walletState } from '@/store/wallet'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import { useSnackbar } from 'notistack'
 
-const TransactionsList = lazy(
-  () => import('@/model/transaction/TransactionsList')
-)
-const TransferForm = lazy(() => import('@/model/transaction/TransferForm'))
+import TransactionsList from '@/model/transaction/TransactionsList'
+import TransferForm from '@/model/transaction/TransferForm'
 
 export default function IndexPage() {
   const { t } = useTranslation(['translation'])
@@ -85,19 +83,17 @@ export default function IndexPage() {
       <Container maxWidth="lg">
         <Grid container spacing={4}>
           <Grid item xs={12} sm={12} md={6} lg={5} xl={5}>
-            <Suspense fallback={<BlockLoading />}>
-              {!signTransaction ? (
-                <BlockLoading />
-              ) : (
-                <TransferForm
-                  publicKey={publicKey}
-                  signTransaction={signTransaction}
-                  connection={connection}
-                  network={network}
-                  fetchTransactions={fetchTransactions}
-                />
-              )}
-            </Suspense>
+            {!signTransaction ? (
+              <BlockLoading />
+            ) : (
+              <TransferForm
+                publicKey={publicKey}
+                signTransaction={signTransaction}
+                connection={connection}
+                network={network}
+                fetchTransactions={fetchTransactions}
+              />
+            )}
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={7} xl={7}>
             <Box>
@@ -121,16 +117,14 @@ export default function IndexPage() {
             </Toolbar>
 
             <Box pb={4}>
-              <Suspense fallback={<DataLoading />}>
-                {!transactionsWS || loading ? (
-                  <DataLoading />
-                ) : (
-                  <TransactionsList
-                    publicKey={publicKey}
-                    transactionsWS={transactionsWS}
-                  />
-                )}
-              </Suspense>
+              {!transactionsWS || loading ? (
+                <DataLoading />
+              ) : (
+                <TransactionsList
+                  publicKey={publicKey}
+                  transactionsWS={transactionsWS}
+                />
+              )}
             </Box>
           </Grid>
         </Grid>

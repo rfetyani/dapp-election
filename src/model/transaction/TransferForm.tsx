@@ -159,7 +159,7 @@ export default function TransferForm({
 
   useEffect(() => {
     getBalance()
-  }, [getBalance])
+  }, [])
 
   return (
     <>
